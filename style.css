@@ -4,3 +4,43 @@ Author: Natalia
 Version: 1.0
 Description: Motyw do strony wizytówki Stajnia Frajda
 */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.site-header {
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 999;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+}

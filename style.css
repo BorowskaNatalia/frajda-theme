@@ -6,7 +6,7 @@ Description: Motyw do strony wizytówki Stajnia Frajda
 */
 
 :root {
-    --orange: #DB6E56;
+    --orange: #C4533D;
     --dark: #162441;
     --light: #fff;
     --font-main: 'Helvetica Neue', sans-serif;
@@ -37,7 +37,8 @@ html {
 body {
     margin: 0;
     font-family: var(--font-main);
-    /*Ustawia domyślną czcionkę dla całej zawartości strony na tę zdefiniowaną w zmiennej --font-main*/
+    color: var(--dark)
+        /*Ustawia domyślną czcionkę dla całej zawartości strony na tę zdefiniowaną w zmiennej --font-main*/
 }
 
 /* ------------------------ */
@@ -103,13 +104,23 @@ body {
 }
 
 .nav-list li a:hover,
+.nav-list li a:focus,
 .nav-list li.current-menu-item a {
     color: var(--orange);
 }
 
 .nav-list li a:hover::after,
+.nav-list li a:focus::after,
 .nav-list li.current-menu-item a::after {
     transform: scaleX(1);
+}
+
+.btn-orange:hover,
+.btn-orange:focus {
+    background-color: var(--light);
+    color: var(--orange);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(247, 144, 30, 0.2);
 }
 
 .nav-list .btn-menu a {
@@ -242,26 +253,26 @@ body {
 /* ------------------------ */
 
 .about-section {
-    position: relative;
-    height: calc(100vh - 80px);
-
-    z-index: 0;
+    padding: 100px 0;
+    background-color: #fff;
 }
 
 .about-wrapper {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 32px;
     gap: 60px;
+    padding: 0 32px;
 }
 
 .about-text {
     flex: 1 1 500px;
     text-align: left;
+    line-height: 1.5;
 }
 
 .about-image {
@@ -272,11 +283,9 @@ body {
 
 .about-image img {
     width: 100%;
-    max-width: 380px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* ------------------------ */
@@ -286,7 +295,7 @@ body {
 
 .services-section {
     padding: 100px 0;
-    background-color: #f9f9f9;
+    background-color: var(--dark);
 }
 
 .services-wrapper {
@@ -300,7 +309,7 @@ body {
     font-size: 32px;
     margin-bottom: 60px;
     font-weight: bold;
-    color: #222;
+    color: var(--light);
 }
 
 .services-grid {
@@ -360,6 +369,71 @@ body {
 
 .services-btn .btn-orange:hover {
     background-color: #dd7200;
+}
+
+/* .services-btn .btn-orange { zachowuje tło i kolor z --orange, usunięto nadpisane kolory } */
+
+/* Sekcja stopki */
+.site-footer {
+    background: var(--dark);
+    color: var(--light);
+    padding: 40px 0;
+}
+
+.site-footer .footer-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Sekcja kontaktu (formularz) */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-wrapper {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
 }
 
 
@@ -429,5 +503,30 @@ body {
 
     .about-image img {
         max-width: 100%;
+    }
+
+
+
+
+    .screen-reader-text {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .screen-reader-text:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 10px 0;
+        padding: 15px;
+        background: #f1f1f1;
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+        z-index: 1000;
     }
 }

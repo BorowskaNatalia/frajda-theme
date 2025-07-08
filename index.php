@@ -21,7 +21,7 @@ get_header();
       <span class="section-label">Pasja do koni</span>
       <h2>Twój azyl na świeżym powietrzu</h2>
       <p>
-        Oferujemy wyjątkowe doświadczenia jeździeckie dla każdego – od początkujących po zaawansowanych. 
+        Oferujemy wyjątkowe doświadczenia jeździeckie dla każdego - od początkujących po zaawansowanych. 
         U nas poczujesz spokój, naturę i moc relacji z końmi.
       </p>
     </div>

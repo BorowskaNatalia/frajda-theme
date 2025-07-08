@@ -6,19 +6,38 @@ Description: Motyw do strony wizytówki Stajnia Frajda
 */
 
 :root {
-    --orange: #f7901e;
-    --dark: #222;
+    --orange: #DB6E56;
+    --dark: #162441;
     --light: #fff;
     --font-main: 'Helvetica Neue', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #b3b0b0;
+    /* lub np. #DB6E56 */
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+
+
+
 html {
     scroll-behavior: smooth;
+    /* Sprawia, że przewijanie strony jest płynne, a nie "skokowe" */
 }
 
 body {
     margin: 0;
     font-family: var(--font-main);
+    /*Ustawia domyślną czcionkę dla całej zawartości strony na tę zdefiniowaną w zmiennej --font-main*/
 }
 
 /* ------------------------ */
@@ -54,6 +73,7 @@ body {
 
 .nav-list {
     list-style: none;
+    /*Usuwa kropki/list markers.*/
     display: flex;
     gap: 20px;
 }
@@ -62,7 +82,7 @@ body {
     text-decoration: none;
     color: var(--dark);
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
     position: relative;
     padding-bottom: 4px;
@@ -106,45 +126,82 @@ body {
     border-color: var(--dark);
 }
 
+.nav-list .btn-menu a::after {
+    content: none;
+}
+
 /* ------------------------ */
 /* HERO */
 /* ------------------------ */
 
 .hero {
-    background: url('src/tlo.jpg') no-repeat bottom center / cover;
-    height: 92vh;
+    position: relative;
+    background: url('src/tlo.jpg') no-repeat center center / cover;
+    background-attachment: fixed;
+    height: calc(100vh - 80px);
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #16244185;
+    /* przyciemnienie */
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-wrapper {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 32px 48px;
+    padding: 0 32px 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
 }
 
 .hero-textbox {
-    background-color: rgba(10, 40, 60, 0.75);
-    padding: 36px 40px;
-    border-radius: 12px;
+    background-color: rgba(10, 40, 60, 0.85);
+    padding: 0px 64px 48px 64px;
+    border-radius: 2px;
     color: var(--light);
-    max-width: 480px;
+    max-width: 500px;
     width: 100%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
 }
 
 .hero-textbox h1 {
-    font-size: 48px;
+    font-size: 70px;
     margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-textbox p {
     font-size: 20px;
     margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-textbox h1,
+.hero-textbox p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-orange {
@@ -156,11 +213,29 @@ body {
     border-radius: 6px;
     text-decoration: none;
     display: inline-block;
+    border: 2px solid var(--orange);
     transition: all 0.3s ease;
 }
 
 .btn-orange:hover {
-    background-color: #dd7200;
+    background-color: var(--light);
+    color: var(--orange);
+    /* Zamiana kolorów */
+    box-shadow: 0 0 0 4px rgba(247, 144, 30, 0.2);
+    /* Miękka pomarańczowa ramka */
+}
+
+.hero-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    /* żeby się nie rozjeżdżało na mobile */
+}
+
+.hero-row p {
+    margin: 0;
+    font-size: 20px;
 }
 
 /* ------------------------ */

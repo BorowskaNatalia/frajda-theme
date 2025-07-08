@@ -6,8 +6,10 @@ get_header();
   <div class="hero-wrapper">
     <div class="hero-textbox">
       <h1>Stajnia Frajda</h1>
-      <p>Poznajmy się!</p>
-      <a href="#o-nas" class="btn btn-orange">O NAS</a>
+      <div class="hero-row">
+         <p>Miejsce stworzone dla koni i ludzi.</p>
+         <a href="#o-nas" class="btn btn-orange">O NAS</a>
+      </div>
     </div>
   </div>
 </section>

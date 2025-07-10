@@ -1,0 +1,76 @@
+// ==========================================
+// SERVICES SECTION — _services.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+
+.services {
+    &__section {
+        @include mixins.section-wrapper(variables.$color-secondary);
+        height: 100vh;
+    }
+
+    &__wrapper {
+        height: 100%;
+        max-width: variables.$container-width;
+        margin: 0 auto;
+        padding: 0 functions.rem(32);
+        text-align: center;
+    }
+
+    &__title {
+        font-size: variables.$font-size-xl;
+        margin-bottom: variables.$gap-lg;
+        font-weight: bold;
+        color: variables.$color-white;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: variables.$gap-md;
+    }
+
+    &__box {
+        @include mixins.card-box;
+        width: 280px;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: variables.$radius-lg;
+            margin-bottom: 1.25rem;
+        }
+
+        h3 {
+            font-size: variables.$font-size-base;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: variables.$color-secondary;
+        }
+
+        p {
+            font-size: variables.$font-size-sm;
+            color: variables.$color-gray-dark;
+            line-height: 1.5;
+        }
+    }
+
+    &__btn {
+        margin-top: variables.$gap-lg;
+
+        .btn--accent {
+            padding: 14px 32px;
+            font-size: variables.$font-size-base;
+            border-radius: variables.$radius-lg;
+        }
+    }
+}

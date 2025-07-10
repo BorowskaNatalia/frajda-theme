@@ -1,0 +1,121 @@
+// ==========================================
+// MIXINS — _mixins.scss
+// ==========================================
+
+@use 'variables' as variables;
+
+// FLEX CENTROWANIE
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// FLEX ROZKŁADANY
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// PEŁNA SEKCJA
+@mixin section-wrapper($bg-color: transparent) {
+    padding: variables.$section-padding 0;
+    background-color: $bg-color;
+}
+
+// PRZYCISK (UNIWERSALNY)
+@mixin btn($bg, $color: variables.$color-white) {
+    background-color: $bg;
+    color: $color;
+    padding: 14px 28px;
+    font-size: variables.$font-size-sm;
+    font-weight: 600;
+    border-radius: variables.$radius-md;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid $bg;
+    transition: all variables.$transition-default;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: variables.$color-white;
+        color: $bg;
+        box-shadow: 0 0 0 4px rgba($bg, 0.2);
+    }
+}
+
+// PRZYCISK – PEŁNA SZEROKOŚĆ (dla mobile, responsywność)
+@mixin btn-full {
+    width: 100%;
+    display: block;
+}
+
+// MEDIA QUERY – MOBILE FIRST
+@mixin respond($breakpoint) {
+    @if $breakpoint ==sm {
+        @media (max-width: variables.$breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==md {
+        @media (max-width: variables.$breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==lg {
+        @media (max-width: variables.$breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xl {
+        @media (max-width: variables.$breakpoint-xl) {
+            @content;
+        }
+    }
+}
+
+// BOX CIENIA + PROMIEŃ
+@mixin card-box {
+    border-radius: variables.$radius-xl;
+    box-shadow: variables.$shadow-md;
+    background-color: variables.$color-white;
+    padding: 32px 24px;
+    transition: transform variables.$transition-default;
+}
+
+// NAKŁADKA (hero darken)
+@mixin overlay($color: rgba(0, 0, 0, 0.5)) {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: $color;
+    z-index: 1;
+    pointer-events: none;
+}
+
+// SCREEN READER TEXT
+@mixin screen-reader-text {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin link-base {
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color variables.$transition-default;
+}

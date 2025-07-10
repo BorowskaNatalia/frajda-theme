@@ -1,0 +1,6 @@
+{
+    "input": "main.scss",
+    "output": "../style.css",
+    "watch": true,
+    "style": "compressed"
+}

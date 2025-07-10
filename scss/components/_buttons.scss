@@ -1,0 +1,71 @@
+// ==========================================
+// PRZYCISKI — _buttons.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+
+/**
+<a href="#" class="btn btn--orange">Zobacz więcej</a>
+<a href="#" class="btn btn--accent">Kontakt</a>
+<a href="#" class="btn btn--bordered">Menu</a>
+**/
+
+// BAZA DLA WSZYSTKICH PRZYCISKÓW
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: variables.$font-size-sm;
+    font-weight: 600;
+    border-radius: variables.$radius-md;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all variables.$transition-default;
+    border: 2px solid transparent;
+}
+
+// PRZYCISK POMARAŃCZOWY (hero, CTA)
+.btn--orange {
+    background-color: variables.$color-primary;
+    color: variables.$color-white;
+    border-color: variables.$color-primary;
+
+    &:hover,
+    &:focus {
+        background-color: variables.$color-white;
+        color: variables.$color-primary;
+        box-shadow: 0 0 0 4px variables.$btn-hover-shadow;
+    }
+}
+
+// PRZYCISK AKCENTOWY (np. w services)
+.btn--accent {
+    background-color: variables.$color-accent;
+    color: variables.$color-white;
+    border-color: variables.$color-accent;
+
+    &:hover,
+    &:focus {
+        background-color: variables.$color-accent-dark;
+        border-color: variables.$color-accent-dark;
+    }
+}
+
+// PRZYCISK OBRAMOWANY CIEMNY (menu główne)
+.btn--bordered {
+    border: 2px solid variables.$color-secondary;
+    color: variables.$color-secondary;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        background-color: variables.$color-secondary;
+        color: variables.$color-white;
+    }
+}
+
+// PEŁNA SZEROKOŚĆ (np. mobilnie)
+.btn--full {
+    width: 100%;
+    display: block;
+}

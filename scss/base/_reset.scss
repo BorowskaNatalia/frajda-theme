@@ -1,0 +1,111 @@
+// ==========================================
+// RESET CSS — _reset.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Margin i padding na zero */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Listy bez stylów */
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Listy dostępne jako role */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Domyślne zachowanie dla body */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: variables.$font-main;
+    background-color: variables.$color-white;
+    color: variables.$color-secondary;
+}
+
+/* Linki */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Obrazy i media */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Formularze */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Focus tylko dla klawiatury */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Ułatwienie przewijania */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Accessibility — screen reader text */
+.screen-reader-text {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    padding: 15px;
+    background: variables.$color-light;
+    color: variables.$color-black;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+}

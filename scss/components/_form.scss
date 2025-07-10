@@ -1,0 +1,63 @@
+// ==========================================
+// FORMULARZE — _form.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+
+form {
+    max-width: 100%;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: variables.$color-secondary;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: variables.$radius-sm;
+    transition: border-color variables.$transition-default;
+
+    &:focus {
+        outline: none;
+        border-color: variables.$color-primary;
+        box-shadow: 0 0 0 2px rgba(variables.$color-primary, 0.2);
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    @include mixins.btn(variables.$color-primary, variables.$color-white);
+}
+
+// Wiadomość po wysłaniu
+.form-message {
+    margin-top: 1rem;
+    font-size: variables.$font-size-sm;
+
+    &.success {
+        color: green;
+    }
+
+    &.error {
+        color: red;
+    }
+}

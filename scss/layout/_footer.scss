@@ -1,0 +1,26 @@
+// ==========================================
+// STOPKA — _footer.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+
+.site-footer {
+    background-color: variables.$color-secondary;
+    color: variables.$color-white;
+    padding: functions.rem(40) 0;
+
+    .footer-inner {
+        width: 90%;
+        max-width: variables.$container-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    p {
+        margin: 0;
+        font-size: variables.$font-size-sm;
+        color: variables.$color-white;
+    }
+}

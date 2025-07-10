@@ -1,0 +1,23 @@
+{
+  "name": "frajda-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss/main.scss style.css --style=compressed --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BorowskaNatalia/frajda-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BorowskaNatalia/frajda-theme/issues"
+  },
+  "homepage": "https://github.com/BorowskaNatalia/frajda-theme#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}

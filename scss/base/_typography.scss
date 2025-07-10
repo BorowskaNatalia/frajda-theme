@@ -1,0 +1,109 @@
+// ==========================================
+// TYPOGRAFIA — _typography.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+
+body {
+    font-family: variables.$font-main;
+    font-size: variables.$font-size-base;
+    color: variables.$color-secondary;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+// ------------------------
+// Nagłówki
+// ------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: variables.$color-secondary;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: variables.$font-size-xxl;
+}
+
+h2 {
+    font-size: variables.$font-size-xl;
+}
+
+h3 {
+    font-size: variables.$font-size-lg;
+}
+
+h4 {
+    font-size: variables.$font-size-md;
+}
+
+h5 {
+    font-size: variables.$font-size-sm;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+// ------------------------
+// Paragrafy i tekst
+// ------------------------
+
+p {
+    margin-bottom: 1.25rem;
+    color: variables.$color-secondary;
+    font-size: variables.$font-size-base;
+    line-height: 1.6;
+}
+
+// ------------------------
+// Linki
+// ------------------------
+
+a {
+    color: variables.$color-primary;
+    text-decoration: none;
+    transition: color variables.$transition-default;
+
+    &:hover,
+    &:focus {
+        color: variables.$color-accent;
+        text-decoration: underline;
+    }
+}
+
+// ------------------------
+// Klasy pomocnicze
+// ------------------------
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-muted {
+    color: variables.$color-gray;
+}
+
+.lead {
+    font-size: variables.$font-size-md;
+    line-height: 1.7;
+}

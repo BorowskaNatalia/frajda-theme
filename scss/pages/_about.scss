@@ -1,0 +1,84 @@
+// ==========================================
+// ABOUT SECTION — _about.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+
+.about {
+    &__section {
+        @include mixins.section-wrapper(#fcf5f5);
+        height: calc(100vh - 80px);
+    }
+
+    &__wrapper {
+        min-height: 100%;
+        @include mixins.flex-center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: variables.$gap-lg;
+        max-width: variables.$container-width;
+        margin: 0 auto;
+        padding: 0 functions.rem(32);
+    }
+
+    &__text {
+        flex: 1 1 500px;
+        text-align: left;
+        line-height: 1.5;
+
+        h2 {
+            font-size: variables.$font-size-xl;
+            margin-bottom: 1rem;
+            color: variables.$color-secondary;
+        }
+
+        p {
+            font-size: variables.$font-size-base;
+            color: variables.$color-secondary;
+        }
+    }
+
+    &__image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: variables.$radius-xl;
+            box-shadow: variables.$shadow-md;
+        }
+    }
+}
+
+// ------------------------
+// RESPONSYWNOŚĆ
+// ------------------------
+
+@include mixins.respond(md) {
+    .about__wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: functions.rem(48) functions.rem(24);
+        gap: variables.$gap-md;
+    }
+
+    .about__text {
+        text-align: center;
+
+        h2 {
+            font-size: variables.$font-size-lg;
+        }
+
+        p {
+            font-size: variables.$font-size-base;
+        }
+    }
+
+    .about__image img {
+        max-width: 100%;
+    }
+}

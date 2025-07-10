@@ -1,0 +1,83 @@
+// ==========================================
+// STYL PODSTAWOWY — _base.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+
+/* Kontener */
+.container {
+    width: 90%;
+    max-width: variables.$container-width;
+    margin: 0 auto;
+    @include mixins.flex-between;
+}
+
+/* Sekcje */
+section {
+    padding: variables.$section-padding 0;
+}
+
+/* Scrollbar (tylko WebKit) */
+body::-webkit-scrollbar {
+    width: variables.$scrollbar-width;
+}
+
+body::-webkit-scrollbar-track {
+    background: variables.$color-light;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: variables.$color-gray;
+    border-radius: variables.$radius-xl;
+    border: 2px solid variables.$color-light;
+}
+
+/* Przyciski – wersja bazowa, jeśli nie używasz mixina */
+button,
+.btn {
+    @include mixins.btn(variables.$color-primary);
+}
+
+/* Klasy pomocnicze layoutowe */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    @include mixins.screen-reader-text;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+/* Obrazy */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Formularze – inputy bez dodatkowych stylów */
+input,
+textarea,
+select {
+    border: 1px solid #ccc;
+    border-radius: variables.$radius-sm;
+    padding: 0.625rem;
+    width: 100%;
+
+    &:focus {
+        outline: 2px solid variables.$color-primary;
+        outline-offset: 2px;
+    }
+}

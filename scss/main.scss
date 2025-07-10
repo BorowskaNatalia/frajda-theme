@@ -1,0 +1,28 @@
+// ==========================================
+// MAIN SCSS ENTRY POINT — main.scss
+// ==========================================
+
+// 1. Abstracts (zmienne, funkcje, mixiny)
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+
+// 2. Base (reset, typografia, bazowe elementy)
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/base';
+
+// 3. Layout (header, footer, responsywność)
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/responsive';
+
+// 4. Components (przyciski, formularze, itd.)
+@use 'components/buttons';
+@use 'components/form';
+
+// 5. Pages (hero, about, services, contact)
+@use 'pages/hero';
+@use 'pages/about';
+@use 'pages/services';
+@use 'pages/contact';

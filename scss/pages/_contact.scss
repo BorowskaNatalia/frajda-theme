@@ -1,0 +1,76 @@
+// ==========================================
+// CONTACT SECTION — _contact.scss
+// ==========================================
+
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+
+.contact {
+    &__section {
+        @include mixins.section-wrapper(variables.$color-white);
+    }
+
+    &__wrapper {
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+
+        .form-group {
+            margin-bottom: functions.rem(24);
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: functions.rem(8);
+            color: variables.$color-secondary;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: functions.rem(10);
+            font: inherit;
+            border: 1px solid #ccc;
+            border-radius: variables.$radius-sm;
+            transition: border-color variables.$transition-default;
+
+            &:focus {
+                outline: none;
+                border-color: variables.$color-primary;
+                box-shadow: 0 0 0 2px rgba(variables.$color-primary, 0.2);
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: functions.rem(120);
+        }
+
+        button,
+        input[type='submit'] {
+            @include mixins.btn(variables.$color-primary, variables.$color-white);
+        }
+    }
+
+    &__message {
+        margin-top: functions.rem(16);
+        font-size: variables.$font-size-sm;
+
+        &--success {
+            color: green;
+        }
+
+        &--error {
+            color: red;
+        }
+    }
+}

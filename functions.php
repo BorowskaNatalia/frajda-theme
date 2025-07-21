@@ -1,5 +1,10 @@
 <?php
-function frajda_enqueue_styles() {
-    wp_enqueue_style('style', get_stylesheet_uri());
+if ( ! defined( 'ABSPATH' ) ) exit;
+require get_template_directory() . '/inc/enqueue.php';
+
+function sf_register_menus() {
+    register_nav_menus([
+        'main_menu' => __('Menu główne', 'stajniafrajda'),
+    ]);
 }
-add_action('wp_enqueue_scripts', 'frajda_enqueue_styles');
+add_action('after_setup_theme', 'sf_register_menus');

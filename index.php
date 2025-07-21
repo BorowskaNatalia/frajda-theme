@@ -1,9 +1,5 @@
 <?php
 get_header();
-?>
-
-<h1>Witaj w Stajni Frajda!</h1>
-
-<?php
+echo "<h1>To jest Twój motyw!</h1>";
 get_footer();
 ?>

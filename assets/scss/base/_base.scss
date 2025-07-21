@@ -1,0 +1,7 @@
+@use '../abstract/variables' as variables;
+
+body {
+    font-family: variables.$font-main;
+    color: variables.$color-navy;
+    background: variables.$color-ivory;
+}

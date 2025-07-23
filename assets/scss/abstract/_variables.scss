@@ -5,8 +5,14 @@ $color-accent: $color-copper;
 $color-ivory: #F6F4EF;
 $color-border: #ececec;
 $color-white: #f7f7f7;
+$color-green: #3d6641;
+$radius-sm: 4px;
+$radius-md: 12px;
+$radius-lg: 32px;
 
-
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
 
 //font
 $font-main: 'Roboto', sans-serif;
@@ -36,3 +42,11 @@ $hamburger-size-mobile: 36px;
 $hamburger-size-tablet: 40px;
 $hamburger-span-width-mobile: 24px;
 $hamburger-span-width-tablet: 28px;
+
+
+$breakpoints: (
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px
+);

@@ -1,0 +1,81 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as *;
+@use "sass:color";
+
+.about {
+    padding: 4rem 1.5rem;
+    background-color: v.$color-white;
+    height: 100vh;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include respond(md) {
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        text-align: center;
+
+        @include respond(md) {
+            text-align: left;
+        }
+    }
+
+    &__eyebrow {
+        display: block;
+        font-size: 0.85rem;
+        color: v.$color-copper;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+
+        @include respond(md) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+        color: v.$color-navy;
+        margin-bottom: 1.5rem;
+    }
+
+    &__link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: v.$color-copper;
+        text-decoration: underline;
+        transition: color 0.3s;
+
+        &:hover {
+            color: color.adjust(v.$color-copper, $lightness: -10%);
+        }
+    }
+
+    &__image {
+        flex: 1;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: v.$shadow-md;
+        }
+    }
+}

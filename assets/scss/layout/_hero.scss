@@ -12,21 +12,16 @@
     padding: 0;
 
     &__bg {
-        position: absolute;
+        position: fixed;
         inset: 0;
-        z-index: 1;
-        background: url('../../assets/img/tlo_mobile.jpg') no-repeat left top / cover;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
+        z-index: -1;
+        background: url('../../assets/img/tlo_mobile.jpg') no-repeat center center / cover;
 
         &::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6); // <-- Stopień przyciemnienia (np. 0.3-0.6)
-            z-index: 2;
-            pointer-events: none;
+            background: rgba(0, 0, 0, 0.6);
         }
     }
 

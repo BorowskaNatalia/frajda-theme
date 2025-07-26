@@ -6,7 +6,7 @@
             <h1 class="hero__title">Cześć!</h1>
             <p class="hero__subtitle">Zakochaj się w koniach i jezdzie konnej</p>
         </div>
-        <a href="#kontakt" class="hero__btn btn">Kontakt</a>
+        <a href="#kontakt" class="hero__btn--orange btn">Kontakt</a>
 
     </div>
 </section>

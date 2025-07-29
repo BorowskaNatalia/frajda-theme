@@ -3,8 +3,9 @@
         <div class="about__content">
             <span class="about__eyebrow">Pasja do koni</span>
             <h2 class="about__title">Twój azyl na świeżym powietrzu</h2>
-            <p class="about__text">Oferujemy wyjątkowe doświadczenie jeździeckie dla każdego.</p>
-            <a href="#kontakt" class="about__link">Get in touch</a>
+            <p class="about__text">Oferujemy wyjątkowe doświadczenie jeździeckie dla każdego. Prowadzimy hipoterapię.
+                Bierzemy udział w festynach i eventach.</p>
+            <a href="#kontakt" class="about__link">Poznaj ofertę</a>
         </div>
         <div class="about__image">
             <img src="<?= get_template_directory_uri(); ?>/assets/img/onas.jpg"

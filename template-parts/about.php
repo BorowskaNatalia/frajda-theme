@@ -2,9 +2,9 @@
     <div class="about__container">
         <div class="about__content">
             <span class="about__eyebrow">Pasja do koni</span>
-            <h2 class="about__title">Twój azyl na świeżym powietrzu</h2>
-            <p class="about__text">Oferujemy wyjątkowe doświadczenie jeździeckie dla każdego. Prowadzimy hipoterapię.
-                Bierzemy udział w festynach i eventach.</p>
+            <h2 class="about__title">O nas</h2>
+            <p class="about__text">Stajnia Frajda została założona w 2000 roku, jest za nami wiele lat doświadczeń i
+                rozwoju.</p>
             <a href="#kontakt" class="about__link">Poznaj ofertę</a>
         </div>
         <div class="about__image">

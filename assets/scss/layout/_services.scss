@@ -1,0 +1,75 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as *;
+
+.services {
+    background: v.$color-ivory;
+    padding: 3rem 1.2rem 2rem;
+
+    &__container {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__eyebrow {
+        display: block;
+        color: v.$color-copper;
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 0.4rem;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 2.2rem;
+        color: v.$color-navy;
+        line-height: 1.22;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__item {
+        background: #fff;
+        border-radius: 0.7rem;
+        box-shadow: 0 6px 28px rgba(22, 36, 65, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow 0.2s;
+
+        &:hover {
+            box-shadow: 0 12px 32px rgba(22, 36, 65, 0.12);
+        }
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__content {
+        padding: 1.3rem 1.1rem 1.4rem;
+    }
+
+    &__item-title {
+        font-size: 1.17rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        color: v.$color-navy;
+    }
+
+    &__item-desc {
+        font-size: 1.01rem;
+        color: v.$color-navy;
+    }
+}

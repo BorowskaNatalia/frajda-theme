@@ -1,0 +1,41 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as m;
+
+.boarding {
+    background: #eaf2f7;
+    padding: 2rem 3rem 2rem 3rem;
+
+    &__container {
+        max-width: 380px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1.2rem;
+    }
+
+    &__title {
+        font-size: v.$title-font-size-mobile;
+        font-weight: normal;
+        color: v.$color-navy;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.01em;
+    }
+
+    &__text {
+        font-size: v.$normal-font-size-mobile;
+        color: v.$color-navy;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    &__image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 80%;
+            max-width: 250px;
+            display: block;
+        }
+    }
+}

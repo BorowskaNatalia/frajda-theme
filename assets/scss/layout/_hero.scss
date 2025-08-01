@@ -9,7 +9,7 @@ $header-height: 55px;
     width: 100%;
     overflow: hidden;
     padding-top: $header-height;
-    min-height: calc(50dvh + #{$header-height});
+    min-height:calc(100dvh - #{$header-height});
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -21,37 +21,37 @@ $header-height: 55px;
         width: 100%;
         height: 100%;
         z-index: -1;
-        background: url('../../assets/img/hero.jpg') no-repeat top right;
-        background-size: auto 50dvh;
+        background:
+            linear-gradient(180deg, rgba(22, 36, 65, 0.54) 0%, rgba(22, 36, 65, 0.48) 100%),
+            url('../../assets/img/mobile.jpg') no-repeat right top / cover;
+        filter: none;
 
-
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-        }
     }
 
     &__container {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
+        min-height: calc(100dvh - #{$header-height});
         display: flex;
         flex-direction: column;
+        justify-content: center; // Wyśrodkowanie w pionie
         align-items: center;
         text-align: center;
-        color: v.$color-white;
-        gap: 2rem;
-        padding: 6rem 0;
+        gap: 2.5rem;
+        padding: 4rem 1rem 3rem 1rem;
     }
 
+    &__text {
+        margin-top: 10vh;
+    }
+
+
+
     &__title {
-        font-size: 2.2rem;
-        font-weight: 700;
+        font-size: 2.6rem;
+        font-weight: 400;
+        letter-spacing: -0.01em;
         color: v.$color-white;
+        line-height: 1.13;
+        margin-bottom: 0.5rem;
 
         @include respond(md) {
             font-size: 3.5rem;
@@ -60,6 +60,46 @@ $header-height: 55px;
         @include respond(lg) {
             font-size: 4rem;
         }
+    }
+
+    &__btn--white {
+        display: inline-block;
+        background: v.$color-white;
+        color: v.$color-navy;
+        border: none;
+        border-radius: 0;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 0.14em;
+        padding: 0.9em 2.8em;
+        box-shadow: 0 3px 15px rgba(22, 36, 65, 0.08);
+        transition: background 0.18s, color 0.18s, transform 0.13s;
+        text-decoration: none;
+        margin-top: auto; // przesuwa przycisk na dół .hero__container
+        margin-bottom: 4rem;
+
+        &:hover,
+        &:focus {
+            background: v.$color-ivory;
+            color: v.$color-copper;
+            transform: translateY(-2px) scale(1.035);
+            outline: none;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    &__intro {
+        display: block;
+        font-size: 1.05rem;
+        letter-spacing: 0.32em;
+        color: v.$color-ivory;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        word-spacing: 0.15em;
     }
 
     &__subtitle {
@@ -75,47 +115,7 @@ $header-height: 55px;
         }
     }
 
-    &__btn {
-        margin-top: 2rem;
-        box-shadow: v.$shadow-lg;
 
-        &--orange {
-            display: inline-block;
-            padding: 0.9em 2.2em;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: v.$color-white;
-            background: v.$color-copper;
-            border: none;
-            border-radius: 2em;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.13s;
-
-            &:hover,
-            &:focus {
-                background: color.adjust(v.$color-copper, $lightness: -8%);
-                color: v.$color-white;
-                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-                transform: translateY(-2px) scale(1.045);
-                outline: none;
-            }
-
-            &:active {
-                transform: scale(0.98);
-            }
-
-            @include respond(md) {
-                font-size: 1.6rem;
-                padding: 1.2em 3em;
-            }
-
-            @include respond(lg) {
-                font-size: 1.5rem;
-                padding: 1em 2.5em;
-            }
-        }
-    }
 
     @include respond(md) {
         padding: 8rem 2rem 5rem;

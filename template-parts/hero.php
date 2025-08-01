@@ -1,12 +1,11 @@
 <section class="hero" aria-label="Sekcja powitalna z tłem">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__container">
-
-        <!-- <div class="hero__text">
-            <h1 class="hero__title">Cześć!</h1>
-            <p class="hero__subtitle">Zakochaj się w koniach i jezdzie konnej</p> 
+        <div class="hero__text">
+            <span class="hero__intro">WITAJ!</span>
+            <h1 class="hero__title">Stajnia Frajda</h1>
         </div>
-        <a href="#kontakt" class="hero__btn--orange btn">Kontakt</a> -->
+        <a href="#onas" class="hero__btn hero__btn--white">O NAS</a>
 
     </div>
 </section>

@@ -1,11 +1,17 @@
 <section class="about">
     <div class="about__container">
-        <div class="about__content">
-            <span class="about__eyebrow">Pasja do koni</span>
-            <h2 class="about__title">O nas</h2>
-            <p class="about__text">Stajnia Frajda została założona w 2000 roku, jest za nami wiele lat doświadczeń i
-                rozwoju.</p>
-            <a href="#kontakt" class="about__link">Poznaj ofertę</a>
+        <h2 class="about__title">
+            O nas
+        </h2>
+        <div class="about__text">
+            <p>
+                Witamy w Stajni Frajda - miejscu, gdzie zakochasz się w koniach i jeździe konnej.
+                Z pasją tworzymy tę stajnię, by dzielić się radością, jaką daje kontakt z końmi.
+                Nasza historia rozpoczęła się w podwarszawskich Markach, a dziś Frajda mieści się w malowniczym
+                Radzyminie,
+                z dala od miejskiego zgiełku, tuż przy lesie. Dzięki temu każdego dnia nasi goście mogą odpoczywać
+                blisko natury.
+            </p>
         </div>
         <div class="about__image">
             <img src="<?= get_template_directory_uri(); ?>/assets/img/onas.jpg"

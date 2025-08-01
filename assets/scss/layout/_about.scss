@@ -1,93 +1,64 @@
 @use "../abstract/variables" as v;
 @use "../abstract/mixins" as *;
-@use "sass:color";
 
 .about {
-    padding: 4rem 1.5rem;
-    background-color: v.$color-white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 3rem 2rem 3rem;
+    background: v.$color-white;
+
 
     &__container {
-        padding-top: 20px;
-        align-items: center;
-        max-width: 1200px;
+        max-width: 420px; // ogranicz szerokość na mobile!
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 2rem;
-
-        @include respond(md) {
-            flex-direction: column;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        @include respond(lg) {
-            flex-direction: row;
-            align-items: center;
-            gap: 4rem;
-        }
-    }
-
-    &__content {
-        flex: 1;
-        text-align: center;
-
-        @include respond(md) {
-            text-align: center;
-        }
-    }
-
-    &__eyebrow {
-        display: block;
-        font-size: 0.85rem;
-        color: v.$color-copper;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.5rem;
     }
 
     &__title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-
-        @include respond(md) {
-            font-size: 2.6rem;
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: v.$title-font-size-mobile;
+        font-weight: 400;
+        color: v.$color-navy;
+        letter-spacing: 0.01em;
+        position: relative;
     }
 
     &__text {
-        font-size: 1rem;
+        font-size: v.$normal-font-size-mobile;
+        line-height: 2;
         color: v.$color-navy;
-        margin-bottom: 1.5rem;
-    }
-
-    &__link {
-        font-size: 1rem;
-        font-weight: 500;
-        color: v.$color-copper;
-        text-decoration: underline;
-        transition: color 0.3s;
-
-        &:hover {
-            color: color.adjust(v.$color-copper, $lightness: -10%);
-        }
+        margin-bottom: 1rem;
+        text-align: center;
     }
 
     &__image {
-        flex: 1;
+        width: 80%;
         display: flex;
         justify-content: center;
 
-        img {
-            width: 50%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: v.$shadow-md;
+    }
+
+    @include respond(md) {
+        &__container {
+            max-width: 900px;
+        }
+
+        &__image img {
+            max-width: 340px;
+        }
+
+        &__title {
+            font-size: 2.9rem;
+        }
+
+        &__text {
+            font-size: 1.08rem;
+            max-width: 670px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

@@ -8,5 +8,6 @@ get_template_part('template-parts/instructors');
 get_template_part('template-parts/hippotherapy');
 get_template_part('template-parts/boarding');
 get_template_part('template-parts/events');
+get_template_part('template-parts/contactbox');
 get_footer();
 ?>

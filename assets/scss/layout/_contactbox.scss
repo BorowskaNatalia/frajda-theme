@@ -1,0 +1,96 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as m;
+
+.contactbox {
+
+
+    background: v.$color-navy;
+    color: v.$color-white;
+    padding: 2rem 3rem 2rem 3rem;
+
+    &__container {
+        max-width: 420px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.1rem;
+    }
+
+    &__subtitle {
+        font-size: v.$title-font-size-mobile;
+        font-weight: normal;
+        margin-bottom: 1.3rem;
+        color: v.$color-white;
+        letter-spacing: 0.01em;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+    }
+
+    &__social-item {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        font-size: 1.06rem;
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: v.$color-white;
+        background: none;
+        border-radius: 50%;
+    }
+
+    &__social-name {
+        font-size: v.$normal-font-size-mobile;
+        color: v.$color-white;
+        letter-spacing: 0.01em;
+    }
+
+    &__hours {
+        margin: 0.8rem 0 0.8rem 0;
+        font-size: v.$normal-font-size-mobile;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-align: center;
+    }
+
+    &__address {
+        width: 100%;
+        border: 1.3px solid v.$color-white;
+        padding: 1.25rem 0.9rem 1.1rem 0.9rem;
+        margin-top: 0.5rem;
+        background: none;
+        color: v.$color-white;
+        text-align: center;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.68rem;
+            font-size: v.$normal-font-size-mobile;
+        }
+    }
+
+    &__address-title {
+        font-size: v.$bold-font-size-mobile;
+        margin-bottom: v.$title-font-size-mobile;
+        font-weight: 400;
+        color: v.$color-white;
+        letter-spacing: 0.01em;
+    }
+}

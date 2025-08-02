@@ -19,5 +19,8 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "hamburgers": "^1.2.1"
   }
 }

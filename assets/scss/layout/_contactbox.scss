@@ -63,26 +63,37 @@
     }
 
     &__address {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         border: 1.3px solid v.$color-white;
-        padding: 1.25rem 0.9rem 1.1rem 0.9rem;
+        padding: 1.2rem 0.9rem 1.2rem 0.9rem;
         margin-top: 0.5rem;
         background: none;
         color: v.$color-white;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
 
         ul {
             margin: 0;
             padding: 0;
             list-style: none;
+            width: 100%;
+
+
         }
 
         li {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.8rem;
             margin-bottom: 0.68rem;
             font-size: v.$normal-font-size-mobile;
+            width: 100%;
         }
     }
 

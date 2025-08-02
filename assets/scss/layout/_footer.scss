@@ -1,0 +1,43 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as m;
+@use "sass:color";
+
+.footer {
+    background: v.$color-navy;
+    color: v.$color-white;
+    padding: 0rem 3rem 2rem 3rem;
+
+    &__container {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1.1rem;
+    }
+
+    &__logo img {
+        width: 20px;
+        height: auto;
+        margin-bottom: 0.1rem;
+    }
+
+    &__copyright {
+        font-size: v.$normal-font-size-mobile;
+        margin-bottom: 0.1rem;
+        font-weight: 400;
+        line-height: 1.27;
+        letter-spacing: 0.01em;
+    }
+
+    &__privacy {
+        color: v.$color-white;
+        font-size: v.$normal-font-size-mobile;
+        font-weight: 400;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+
+}

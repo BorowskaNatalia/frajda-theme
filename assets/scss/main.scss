@@ -2,6 +2,8 @@
 @use "./abstract/mixins";
 @use "./base/reset";
 @use "./base/base";
+@use "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
 
 @use "./layout/header";
 @use "./base/buttons";
@@ -14,3 +16,4 @@
 @use "./layout/boarding";
 @use "./layout/events";
 @use "./layout/contactbox";
+@use "./layout/footer";

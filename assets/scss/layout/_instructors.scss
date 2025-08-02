@@ -6,11 +6,28 @@
     background: #eaf2f7;
     padding: 2rem 3rem 2rem 3rem;
 
+    @include respond(md) {
+        padding: 4rem 4rem 4rem 4rem;
+    }
+
+    @include respond(lg) {
+        display: flex;
+        padding: 6rem 4rem 6rem 4rem;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+
+    }
+
     &__container {
         max-width: 410px;
         margin: 0 auto;
         text-align: center;
         padding: 0 1rem;
+
+        @include respond(lg) {
+            max-width: 1200px;
+        }
     }
 
     &__title {
@@ -18,13 +35,26 @@
         font-weight: normal;
         color: v.$color-navy;
         margin-bottom: 2.1rem;
+
+        @include respond(md) {
+            font-size: v.$title-font-size-tablet;
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: 2.1rem;
+
+        @include respond(lg) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2.5rem 3rem; // rzędy x kolumny
+        }
     }
+
 
     &__item {
         display: flex;
@@ -41,12 +71,32 @@
         }
     }
 
+    &__item--main {
+        @include respond(lg) {
+            flex-basis: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.2rem;
+        }
+    }
+
     &__row {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 1.2rem;
         margin-bottom: 0.6rem;
+
+        @include respond(md) {
+            gap: 5rem;
+        }
+
+        @include respond(lg) {
+            gap: 5rem;
+            margin-bottom: 0; // zabierz margines między rzędami
+        }
+
+
     }
 
     &__img {
@@ -57,6 +107,11 @@
         margin-bottom: 0.7rem;
         box-shadow: 0 2px 12px rgba(22, 36, 65, 0.08);
 
+        @include respond(md) {
+            width: 120px;
+            height: 120px;
+        }
+
     }
 
     &__name {
@@ -64,12 +119,28 @@
         color: v.$color-navy;
         font-weight: 700;
         margin-bottom: 0.1rem;
+
+        @include respond(md) {
+            font-size: v.$bold-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$bold-font-size-desktop;
+        }
     }
 
     &__phone {
         font-size: v.$normal-font-size-mobile;
         font-weight: 600;
         color: v.$color-navy;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 
     &__desc {
@@ -78,5 +149,14 @@
         margin-top: 0.1rem;
         font-weight: 400;
         letter-spacing: 0.01em;
+
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 }

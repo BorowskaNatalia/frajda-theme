@@ -20,7 +20,7 @@
                     <div class="instructors__content">
                         <h3 class="instructors__name">Dominika</h3>
                         <div class="instructors__phone">510-558-779</div>
-                        <div class="instructors__desc">Środa · Piątek</div>
+                        <div class="instructors__desc">Poniedziałek · Piątek</div>
                     </div>
                 </div>
                 <div class="instructors__item">

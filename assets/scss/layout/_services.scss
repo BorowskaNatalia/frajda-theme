@@ -5,11 +5,32 @@
     background: #eaf2f7;
     padding: 2rem 3rem 2rem 3rem;
 
+    @include respond(md) {
+        padding: 4rem 4rem 4rem 4rem;
+    }
+
+    @include respond(lg) {
+        display: flex;
+        padding: 6rem 4rem 6rem 4rem;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+
+    }
+
     &__container {
-        max-width: 370px;
+
         margin: 0 auto;
         text-align: center;
         padding: 0 1rem;
+        max-width: 400px;
+
+        @include respond(lg) {
+            max-width: 1200px;
+            align-items: center;
+            justify-content: center;
+        }
+
     }
 
     &__title {
@@ -18,12 +39,28 @@
         color: v.$color-navy;
         margin-bottom: 1.9rem;
         letter-spacing: 0.01em;
+
+        @include respond(md) {
+            font-size: v.$title-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$title-font-size-desktop;
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+        @include respond(lg) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+
     }
 
     &__item {
@@ -34,22 +71,35 @@
         padding: 0;
         border: none;
         box-shadow: none;
+
+
+        @include respond(lg) {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
     }
 
     &__img {
         width: 100%;
+        height: auto;
         display: block;
         aspect-ratio: 16 / 10;
         object-fit: cover;
         object-position: center;
+
+        @include respond(lg) {
+            max-height: 230px;
+        }
     }
 
     &__content {
         background: #fff;
         border: 1.5px solid v.$color-navy;
         width: 100%;
-        max-width: 370px;
-        margin-top: 0.45rem; // lekkie nachodzenie na obrazek, opcjonalnie
+        max-width: 400px;
+        margin-top: 0.45rem;
         padding: 1.15rem 1rem 1.2rem 1rem;
         text-align: center;
         box-sizing: border-box;
@@ -64,6 +114,14 @@
         color: v.$color-navy;
         margin-bottom: 0.35rem;
         letter-spacing: 0.01em;
+
+        @include respond(md) {
+            font-size: v.$bold-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$bold-font-size-desktop;
+        }
     }
 
     &__item-desc {
@@ -72,5 +130,13 @@
         font-weight: 400;
         line-height: 1.5;
         margin: 0;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 }

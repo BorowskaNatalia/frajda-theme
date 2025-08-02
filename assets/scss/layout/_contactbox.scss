@@ -1,5 +1,5 @@
 @use "../abstract/variables" as v;
-@use "../abstract/mixins" as m;
+@use "../abstract/mixins" as *;
 
 .contactbox {
 
@@ -8,8 +8,13 @@
     color: v.$color-white;
     padding: 2rem 3rem 2rem 3rem;
 
+    @include respond(md) {
+        padding: 4rem 4rem 4rem 4rem;
+    }
+
+
     &__container {
-        max-width: 420px;
+        max-width: 400px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -23,6 +28,14 @@
         margin-bottom: 1.3rem;
         color: v.$color-white;
         letter-spacing: 0.01em;
+
+        @include respond(md) {
+            font-size: v.$title-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$title-font-size-desktop;
+        }
     }
 
     &__social {
@@ -36,7 +49,17 @@
         display: flex;
         align-items: center;
         gap: 1.1rem;
-        font-size: 1.06rem;
+        font-size: v.$normal-font-size-mobile;
+
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
+
     }
 
     &__icon {
@@ -52,6 +75,14 @@
         font-size: v.$normal-font-size-mobile;
         color: v.$color-white;
         letter-spacing: 0.01em;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 
     &__hours {
@@ -60,6 +91,14 @@
         font-weight: 500;
         letter-spacing: 0.01em;
         text-align: center;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 
     &__address {
@@ -94,14 +133,16 @@
             margin-bottom: 0.68rem;
             font-size: v.$normal-font-size-mobile;
             width: 100%;
+
+            @include respond(md) {
+                font-size: v.$normal-font-size-tablet;
+            }
+
+            @include respond(lg) {
+                font-size: v.$normal-font-size-desktop;
+            }
         }
     }
 
-    &__address-title {
-        font-size: v.$bold-font-size-mobile;
-        margin-bottom: v.$title-font-size-mobile;
-        font-weight: 400;
-        color: v.$color-white;
-        letter-spacing: 0.01em;
-    }
+
 }

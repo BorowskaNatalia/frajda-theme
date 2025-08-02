@@ -1,4 +1,19 @@
 @use "variables" as v;
+@use 'sass:map';
+
+$breakpoints: (
+    xs: 0,
+    // od 0px - telefony bardzo małe
+    sm: 480px,
+    // telefony poziomo/większe ekrany
+    md: 767px,
+    // tablety (iPad w pionie)
+    lg: 1024px,
+    // tablety w poziomie, małe laptopy
+    xl: 1280px,
+    // standardowe laptopy
+    xxl: 1440px // duże monitory
+);
 
 @mixin flex-center {
     display: flex;
@@ -6,47 +21,9 @@
     justify-content: center;
 }
 
-@mixin tablet {
-    @media (min-width: 769px) and (max-width: #{v.$tablet-breakpoint}) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: #{v.$desktop-breakpoint}) {
-        @content;
-    }
-}
-
-@mixin nav-desktop-up {
-    @media (min-width: 769px) {
-        @content;
-    }
-}
-
 
 @mixin respond($breakpoint) {
-    @if $breakpoint ==sm {
-        @media (min-width: 576px) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==md {
-        @media (min-width: 768px) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==lg {
-        @media (min-width: 992px) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==xl {
-        @media (min-width: 1200px) {
-            @content;
-        }
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+        @content;
     }
 }

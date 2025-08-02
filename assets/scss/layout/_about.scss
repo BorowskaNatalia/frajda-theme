@@ -5,14 +5,37 @@
     padding: 2rem 3rem 2rem 3rem;
     background: v.$color-white;
 
+    @include respond(md) {
+        padding: 4rem 4rem 4rem 4rem;
+    }
+
+    @include respond(lg) {
+        padding: 6rem 4rem 6rem 4rem;
+        height: 100vh;
+    }
+
+
 
     &__container {
-        max-width: 420px; // ogranicz szerokość na mobile!
+        max-width: 400px;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 1rem;
         gap: 2rem;
+
+
+        @include respond(lg) {
+            max-width: 1200px;
+            flex-direction: row;
+            align-items: center;
+            gap: 5rem;
+        }
+
+
+
     }
 
     &__title {
@@ -24,41 +47,43 @@
         color: v.$color-navy;
         letter-spacing: 0.01em;
         position: relative;
+        margin-bottom: 1.5rem;
+
+        @include respond(md) {
+            font-size: v.$title-font-size-tablet;
+            margin-bottom: 2rem;
+        }
+
+        @include respond(lg) {
+            font-size: v.$title-font-size-desktop;
+            align-items: flex-start;
+        }
     }
 
     &__text {
         font-size: v.$normal-font-size-mobile;
-        line-height: 2;
+        line-height: 1.5;
         color: v.$color-navy;
         margin-bottom: 1rem;
         text-align: center;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+            line-height: 2;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+            text-align: left;
+        }
     }
 
     &__image {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
 
     }
 
-    @include respond(md) {
-        &__container {
-            max-width: 900px;
-        }
 
-        &__image img {
-            max-width: 340px;
-        }
-
-        &__title {
-            font-size: 2.9rem;
-        }
-
-        &__text {
-            font-size: 1.08rem;
-            max-width: 670px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
 }

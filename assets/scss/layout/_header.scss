@@ -22,13 +22,13 @@
         margin: 0 auto;
         padding: 0.7rem v.$header-mobile-padding-x;
 
-        @include m.tablet {
+        @include m.respond(md) {
             padding-left: v.$header-tablet-padding-x;
             padding-right: v.$header-tablet-padding-x;
             justify-content: space-between;
         }
 
-        @include m.desktop {
+        @include m.respond(lg) {
             padding-left: v.$header-desktop-padding-x;
             padding-right: v.$header-desktop-padding-x;
         }
@@ -60,11 +60,11 @@
             display: block;
         }
 
-        @include m.tablet {
+        @include m.respond(md) {
             font-size: v.$logo-font-size-tablet;
         }
 
-        @include m.desktop {
+        @include m.respond(lg) {
             font-size: v.$logo-font-size-desktop;
         }
     }
@@ -95,7 +95,7 @@
             pointer-events: all;
         }
 
-        @include m.nav-desktop-up {
+        @include m.respond(lg) {
             position: static;
             display: block !important;
             box-shadow: none;
@@ -151,7 +151,7 @@
             border-top: 1px solid v.$color-border;
         }
 
-        @include m.nav-desktop-up {
+        @include m.respond(lg) {
 
             flex-direction: row;
             justify-content: flex-end;
@@ -178,7 +178,7 @@
             }
         }
 
-        @include m.desktop {
+        @include m.respond(lg) {
             gap: v.$menu-gap-desktop;
 
             a {
@@ -232,11 +232,8 @@
         background: color.adjust(v.$color-navy, $lightness: -10%);
     }
 
-    @include m.tablet {
+    @include m.respond(lg) {
         display: none;
     }
 
-    @include m.desktop {
-        display: none;
-    }
 }

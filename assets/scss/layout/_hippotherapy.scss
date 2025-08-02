@@ -5,8 +5,12 @@
     background: v.$color-white;
     padding: 2rem 3rem 2rem 3rem;
 
+    @include respond(md) {
+        padding: 4rem 4rem 4rem 4rem;
+    }
+
     &__container {
-        max-width: 380px;
+        max-width: 400px;
         margin: 0 auto;
         text-align: center;
         padding: 0 1.2rem;
@@ -18,6 +22,15 @@
         color: v.$color-navy;
         margin-bottom: 1.5rem;
         letter-spacing: 0.01em;
+
+        @include respond(md) {
+            font-size: v.$title-font-size-tablet;
+
+        }
+
+        @include respond(lg) {
+            font-size: v.$title-font-size-desktop;
+        }
     }
 
     &__text {
@@ -25,6 +38,15 @@
         color: v.$color-navy;
         margin-bottom: 1.7rem;
         line-height: 1.5;
+
+        @include respond(md) {
+            font-size: v.$normal-font-size-tablet;
+            line-height: 2;
+        }
+
+        @include respond(lg) {
+            font-size: v.$normal-font-size-desktop;
+        }
     }
 
     &__image {

@@ -1,13 +1,6 @@
-<?php
-get_header();
-get_template_part('template-parts/hero');
-get_template_part('template-parts/about');
-get_template_part('template-parts/services');
-get_template_part('template-parts/treningi');
-get_template_part('template-parts/instructors');
-get_template_part('template-parts/hippotherapy');
-get_template_part('template-parts/boarding');
-get_template_part('template-parts/events');
-get_template_part('template-parts/contactbox');
-get_footer();
-?>
+<?php get_header(); ?>
+<div class="container" style="padding:2rem 0">
+    <h1><?php the_title(); ?></h1>
+    <?php the_content(); ?>
+</div>
+<?php get_footer(); ?>

@@ -1,22 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector('.header__hamburger');
+(function () {
+    const burger = document.getElementById('js-burger');
     const nav = document.querySelector('.header__nav');
 
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', function () {
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('is-active');
-            // Opcjonalnie blokowanie scrolla body
-            document.body.classList.toggle('menu-open');
+    if (burger && nav) {
+        burger.addEventListener('click', () => {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!expanded));
+            document.body.classList.toggle('nav-open');
         });
-
-        // (opcjonalnie) Zamykanie menu po kliknięciu w link
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                hamburger.classList.remove('is-active');
-                document.body.classList.remove('menu-open');
-            });
+        nav.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (link && document.body.classList.contains('nav-open')) {
+                burger.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('nav-open');
+            }
         });
     }
-});
+
+    // Smooth scroll (WCAG-friendly – nie blokuje klawiatury)
+    document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const el = id ? document.getElementById(id) : null;
+        if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, { passive: false });
+})();

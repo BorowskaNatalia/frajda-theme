@@ -1,0 +1,20 @@
+// === Variables ===
+$container: 1200px;
+$gutter: 1rem;
+
+// Colors
+$clr-bg: #0b0b0c;
+$clr-bg-2: #101115;
+$clr-surface: #16171a;
+$clr-surface-2: #0f1014;
+$clr-text: #e8e8ea;
+$clr-muted: #a8abb2;
+$clr-primary: #5bd38a;
+$clr-primary-600: #3bbf76;
+$clr-border: #2b2d33;
+
+// Typography & radii
+$font-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+$font-size: 16px;
+$radius: 1rem;
+$shadow: 0 10px 30px rgba(0, 0, 0, .25);

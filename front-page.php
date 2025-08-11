@@ -1,0 +1,11 @@
+<?php
+get_header();
+get_template_part('template-parts/hero');
+get_template_part('template-parts/about');
+get_template_part('template-parts/oferta-grid');
+get_template_part('template-parts/trening');
+get_template_part('template-parts/instruktorzy');
+get_template_part('template-parts/hipoterapia');
+get_template_part('template-parts/pensjonat');
+get_template_part('template-parts/eventy');
+get_footer();

@@ -1,18 +1,9 @@
-@use "./abstract/variables";
-@use "./abstract/mixins";
-@use "./base/reset";
-@use "./base/base";
-
-
-@use "./layout/header";
-@use "./base/buttons";
-@use "./layout/hero";
-@use "./layout/about";
-@use "./layout/services";
-@use "./layout/trainings";
-@use "./layout/instructors";
-@use "./layout/hippotherapy";
-@use "./layout/boarding";
-@use "./layout/events";
-@use "./layout/contactbox";
-@use "./layout/footer";
+// Entry point
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'base';
+@import 'header';
+@import 'hero';
+@import 'avatars';
+@import 'buttons';

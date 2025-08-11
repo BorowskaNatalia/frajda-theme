@@ -1,0 +1,105 @@
+// === Header ===
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(16, 17, 21, .7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $clr-border;
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 800;
+    letter-spacing: .4px;
+  }
+
+  .brand__logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, $clr-primary 0%, $clr-primary-600 100%);
+    display: inline-block;
+  }
+
+  &__nav {
+    position: fixed;
+    inset: 64px 0 auto 0;
+    background: $clr-surface-2;
+    transform: translateY(-120%);
+    transition: transform .2s ease;
+    padding: 1rem;
+    border-bottom: 1px solid $clr-border;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: .5rem;
+  }
+
+  .menu a {
+    padding: .75rem 1rem;
+    display: block;
+    border-radius: .75rem;
+    border: 1px solid transparent;
+  }
+
+  .menu a:hover {
+    border-color: rgba(255, 255, 255, .1);
+  }
+
+  &__burger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    .header__burger-line {
+      width: 26px;
+      height: 2px;
+      background: $clr-text;
+      display: block;
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  @include mq(md) {
+    &__nav {
+      position: static;
+      transform: none;
+      background: transparent;
+      padding: 0;
+      border: 0;
+    }
+
+    .menu {
+      grid-auto-flow: column;
+      gap: .25rem;
+    }
+
+    .menu a {
+      padding: .5rem .75rem;
+    }
+  }
+}
+
+body.nav-open .header__nav {
+  transform: translateY(0);
+}

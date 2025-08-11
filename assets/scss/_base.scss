@@ -1,0 +1,198 @@
+// === Base Components ===
+
+// Sections
+.section {
+  padding: 64px 0;
+
+  &--alt {
+    background: #121318;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 2rem;
+
+    @include mq(md) {
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+    margin: 0 0 1rem;
+    letter-spacing: .3px;
+  }
+
+  &__text {
+    color: $clr-muted;
+  }
+}
+
+// Media placeholder
+.media-placeholder {
+  background: linear-gradient(135deg, #20222a 0%, #1a1b20 100%);
+  width: 100%;
+  padding-top: 66%;
+  border-radius: $radius;
+}
+
+// Generic grids
+.grid {
+  display: grid;
+  gap: 1rem;
+
+  &--3 {
+    @include mq(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Cards
+.card {
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  transition: transform .2s ease, border-color .2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, .1);
+  }
+
+  &__media {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #23252d 0%, #1c1e25 100%);
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+
+  &__title {
+    margin: 0 0 .25rem;
+    font-size: 1.125rem;
+  }
+
+  &__text {
+    margin: 0;
+    color: $clr-muted;
+  }
+}
+
+// Feature blocks
+.feature {
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius;
+  padding: 1.25rem;
+  box-shadow: $shadow;
+
+  &__title {
+    margin: 0 0 .25rem;
+  }
+
+  &__text {
+    margin: 0;
+    color: $clr-muted;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: calc($radius - .25rem);
+  padding: .75rem 1rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+
+  &--primary {
+    background: $clr-primary;
+    color: #0a120d;
+
+    &:hover {
+      background: $clr-primary-600;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    border-color: $clr-border;
+    color: $clr-text;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, .2);
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: #0e0f12;
+  border-top: 1px solid $clr-border;
+
+  &__inner {
+    @include container;
+    padding: 2rem 0;
+    display: grid;
+    gap: 2rem;
+
+    @include mq(md) {
+      grid-template-columns: 1.2fr .8fr;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $clr-border;
+    padding: 1rem 0;
+    color: $clr-muted;
+  }
+
+  &__title {
+    margin: 0 0 .75rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: .25rem;
+    }
+  }
+}
+
+// Env banner (web3 warning)
+.env-banner {
+  margin: 0;
+  padding: .5rem 1rem;
+  background: #201f2a;
+  border-bottom: 1px solid $clr-border;
+  color: $clr-muted;
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  justify-content: center;
+
+  &__close {
+    appearance: none;
+    background: transparent;
+    border: 1px solid $clr-border;
+    border-radius: .5rem;
+    padding: .25rem .5rem;
+    color: $clr-text;
+    cursor: pointer;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, .2);
+    }
+  }
+}
